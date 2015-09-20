@@ -6,6 +6,9 @@
 {META}
 <title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
 
+<link rel="search" type="application/opensearchdescription+xml" title="Fórum.Mozilla.cz" href="http://forum.mozilla.cz/searchmodule.xml">
+<link rel="search" type="application/opensearchdescription+xml" title="Mozilla.cz" href="http://www.mozilla.cz/wp-content/themes/OneMozilla-MozillaCZ/search/Mozilla.cz.xml">
+
 <!-- IF S_ENABLE_FEEDS -->
 	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}"><!-- ENDIF -->
 	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news"><!-- ENDIF -->
@@ -44,22 +47,22 @@
 	})(document);
 </script>
 <!-- ENDIF -->
-<link href="{T_STYLESHEET_LINK}" rel="stylesheet">
-<link href="{T_STYLESHEET_LANG_LINK}" rel="stylesheet">
-<link href="{T_THEME_PATH}/responsive.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" media="all and (max-width: 700px), all and (max-device-width: 700px)">
+<link href="{ROOT_PATH}styles/prosilver/theme/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" />
+<link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" />
+<link href="{ROOT_PATH}styles/prosilver/theme/responsive.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" media="all and (max-width: 700px), all and (max-device-width: 700px)">
 
 <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
-	<link href="{T_THEME_PATH}/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+	<link href="{ROOT_PATH}styles/prosilver/theme/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <!-- ENDIF -->
 
 <!-- IF S_PLUPLOAD -->
-	<link href="{T_THEME_PATH}/plupload.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+	<link href="{ROOT_PATH}styles/prosilver/theme/plupload.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <!-- ENDIF -->
 
 <!--[if lte IE 9]>
-	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+	<link href="{ROOT_PATH}styles/prosilver/theme/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <![endif]-->
-
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" />
 <!-- EVENT overall_header_head_append -->
 
 {$STYLESHEETS}
@@ -85,18 +88,21 @@
 			</div>
 
 			<!-- EVENT overall_header_searchbox_before -->
-			<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+			
 			<div id="search-box" class="search-box search-header" role="search">
-				<form action="{U_SEARCH}" method="get" id="search">
+				<form action="https://www.google.com/cse" method="get" id="search">
 				<fieldset>
-					<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+					<input type="hidden" name="cx" value="000059552786512968692:tdzym5jxivq" />
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input name="q" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
 					<button class="button icon-button search-icon" type="submit" title="{L_SEARCH}">{L_SEARCH}</button>
+					<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
 					<a href="{U_SEARCH}" class="button icon-button search-adv-icon" title="{L_SEARCH_ADV}">{L_SEARCH_ADV}</a>
 					{S_SEARCH_HIDDEN_FIELDS}
+					<!-- ENDIF -->
 				</fieldset>
 				</form>
 			</div>
-			<!-- ENDIF -->
 
 			</div>
 		</div>

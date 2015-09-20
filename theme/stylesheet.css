@@ -7,11 +7,24 @@
     --------------------------------------------------------------
 */
 
-@import url("common.css");
-@import url("links.css");
-@import url("content.css");
-@import url("buttons.css");
-@import url("cp.css");
-@import url("forms.css");
-@import url("colours.css");
 @import url("imageset.css");
+
+#before-ask {
+    text-align: center;
+    font-size: 1.2em;
+    color: black;
+    padding: 0.8em;
+}
+
+#before-ask div {
+    margin-top: 0.8em;
+}
+
+#before-ask img {
+    margin-right: 0.2em;
+}
+
+#before-ask div strong {
+    margin-right: 1.3em;
+    white-space: nowrap;
+}
