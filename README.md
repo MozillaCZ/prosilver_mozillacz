@@ -1,2 +1,2 @@
-# prosilver_mozillacz
-phpBB theme for Czech support forum.mozilla.cz
+# prosilver Mozilla.cz
+Styl vzhledu pro phpBB 3.1, který je použit na [Fóru Mozilla.cz](http://forum.mozilla.cz/).
