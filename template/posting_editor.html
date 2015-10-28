@@ -128,6 +128,13 @@
 
 		<fieldset class="fields1">
 			<!-- EVENT posting_editor_options_prepend -->
+			<!-- IF S_NOTIFY_ALLOWED -->
+				<!-- IF S_NEW_MESSAGE -->
+					<div><label for="notify"><input type="checkbox" name="notify" id="notify" checked="checked" /> {L_NOTIFY_REPLY}</label></div>
+				<!-- ELSE -->
+					<div><label for="notify"><input type="checkbox" name="notify" id="notify"{S_NOTIFY_CHECKED} /> {L_NOTIFY_REPLY}</label></div>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
 			<!-- IF S_BBCODE_ALLOWED -->
 				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
 			<!-- ENDIF -->
@@ -139,9 +146,6 @@
 			<!-- ENDIF -->
 			<!-- IF S_SIG_ALLOWED -->
 				<div><label for="attach_sig"><input type="checkbox" name="attach_sig" id="attach_sig"{S_SIGNATURE_CHECKED} /> {L_ATTACH_SIG}</label></div>
-			<!-- ENDIF -->
-			<!-- IF S_NOTIFY_ALLOWED -->
-				<div><label for="notify"><input type="checkbox" name="notify" id="notify"{S_NOTIFY_CHECKED} /> {L_NOTIFY_REPLY}</label></div>
 			<!-- ENDIF -->
 			<!-- IF S_LOCK_TOPIC_ALLOWED -->
 				<div><label for="lock_topic"><input type="checkbox" name="lock_topic" id="lock_topic"{S_LOCK_TOPIC_CHECKED} /> {L_LOCK_TOPIC}</label></div>
