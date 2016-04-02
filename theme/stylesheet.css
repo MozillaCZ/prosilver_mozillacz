@@ -9,22 +9,24 @@
 
 @import url("imageset.css");
 
-#before-ask {
+#sumo-announcement {
     text-align: center;
     font-size: 1.2em;
     color: black;
     padding: 0.8em;
 }
 
-#before-ask div {
+#sumo-announcement div {
     margin-top: 0.8em;
 }
 
-#before-ask img {
+#sumo-announcement img {
+    max-width: 16px;
+    max-height: 16px;
     margin-right: 0.2em;
 }
 
-#before-ask div strong {
+#sumo-announcement div strong {
     margin-right: 1.3em;
     white-space: nowrap;
 }
